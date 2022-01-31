@@ -1,11 +1,34 @@
 .night_winter{
-    background: url('./img/winter_night.jpg') center center;
+    background: url('./img/winter_night.jpg') center/cover;
     color: white;
+    text-align: center;
 }
 .day_winter{
-    background: url('./img/winter_day.jpg') center center;
+    background: url('./img/winter_day.jpg') center/cover;
     color: black;
+    text-align: center;
 }
-// .snow{
-//     background: url('https://e7.pngegg.com/pngimages/336/340/png-clipart-snow-christmas-snow-winter-christmas-snow.png') ;
-// }
+.snow1{
+    background-image: url('./img/snow1.png');
+    position:absolute;
+    width: 100%;
+     height:600px;
+     animation: snow1 18s linear infinite;    
+ }
+ .snow2{
+    background-image: url('./img/snow2.png'),url('./img/snow3.png');
+    animation: snow2 10s linear infinite;
+    width: 100%;
+    height:600px;
+    position:absolute;
+}
+ @keyframes snow1{
+    from{background-position: 0 -300px;}
+    20% {background-position: 20% -100px;}
+    40% {background-position: 30% 100px;}
+    to{background-position: 20% 700px;}
+}
+@keyframes snow2{
+    0%{background-position: 0 0, 0 0;}
+    100%{background-position: 10% 600px, 10% 600px;}
+}

@@ -6,6 +6,7 @@ export default function WeatherApi() {
 
 
   const [weather, setWeather]= useState({});
+  
 
   useEffect(()=>{
     fetch("https://api.weatherapi.com/v1/current.json?key=b23e4af68e1f4e088d4132115222201&q=Kharkiv&aqi=no")
@@ -40,11 +41,20 @@ export default function WeatherApi() {
       return <Spiner/>;
     } else {
       return (
-        <span style={style} className={weather.items.is_day? 'day_winter': 'night_winter'}>
-          {weather.items.condition.text}
-          <img src={weather.items.condition.icon} alt="img" />
-          {weather.items.temp_c}
-        </span>
+        <>
+          {weather.items.condition.precip_mm ?
+              <>
+                <div className="snow1"></div>
+                <div className="snow2"></div>
+              </>
+          :null}
+          <span style={style} className={weather.items.is_day? 'day_winter': 'night_winter'}>
+            {weather.items.condition.text}
+            <img src={weather.items.condition.icon} alt="img" />
+            {weather.items.temp_c}
+          </span>
+        </>
+        
       )
     }}
 
