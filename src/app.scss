@@ -1,8 +1,14 @@
 @import "~bootstrap/scss/bootstrap";
 
+
 #root{
     height: 100vh;
 }
 .App{
     height: 100%;
 }
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+      }

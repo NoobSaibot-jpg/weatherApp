@@ -28,6 +28,8 @@ export default function WeatherApi() {
   },[weather])
   
 
+  const myRe = /snow/;
+
   const style = {
     height: '100%',
     width: '100%',
@@ -42,7 +44,7 @@ export default function WeatherApi() {
     } else {
       return (
         <>
-          {weather.items.condition.precip_mm ?
+          {myRe.exec(weather.items.condition.text) ?
               <>
                 <div className="snow1"></div>
                 <div className="snow2"></div>
