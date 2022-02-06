@@ -1,6 +1,10 @@
 import Spiner from './spiner/Spiner';
 import './weather.scss'
 import { useState, useEffect } from 'react';
+import cloud1 from './img/cloud-01.png';
+import cloud2 from './img/cloud-02.png';
+import cloud3 from './img/cloud-03.png';
+import cloud4 from './img/cloud-04.png'
 
 export default function WeatherApi() {
 
@@ -37,13 +41,14 @@ export default function WeatherApi() {
     
   }
 
-    {if (weather.error) {
+    if (weather.error) {
       return <div>Ошибка: {weather.error.message}</div>
     } else if (!weather.isLoaded) {
       return <Spiner/>;
     } else {
       return (
         <>
+          
           {myRe.exec(weather.items.condition.text) ?
               <>
                 <div className="snow1"></div>
@@ -51,6 +56,13 @@ export default function WeatherApi() {
               </>
           :null}
           <span style={style} className={weather.items.is_day? 'day_winter': 'night_winter'}>
+            <div className="cloud">
+              <img src={cloud1} alt="" className="cloud1"/>
+              <img src={cloud2} alt="" className="cloud2"/>
+              <img src={cloud3} alt="" className="cloud3"/>
+              <img src={cloud4} alt="" className="cloud4"/>
+            </div>
+            
             {weather.items.condition.text}
             <img src={weather.items.condition.icon} alt="img" />
             {weather.items.temp_c}
@@ -59,8 +71,3 @@ export default function WeatherApi() {
         
       )
     }}
-
-
-  }
-
-  // condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png"
