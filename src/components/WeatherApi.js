@@ -32,7 +32,8 @@ export default function WeatherApi() {
   },[weather])
   
 
-  const myRe = /snow/;
+  const myReCloud = /snow/;
+  const myReRain = /rain/;
 
   const style = {
     height: '100%',
@@ -49,19 +50,26 @@ export default function WeatherApi() {
       return (
         <>
           
-          {myRe.exec(weather.items.condition.text) ?
+          {myReCloud.exec(weather.items.condition.text) ?
               <>
                 <div className="snow1"></div>
                 <div className="snow2"></div>
-                <div className="cloud">
-                  <img src={cloud1} alt="" className="cloud1"/>
-                  <img src={cloud2} alt="" className="cloud2"/>
-                  <img src={cloud3} alt="" className="cloud3"/>
-                  <img src={cloud4} alt="" className="cloud4"/>
-                </div>
+                
               </>
           :null}
+          {myReRain.exec(weather.items.condition.text) ?
+              <>
+                <div className="rain"></div>
+              </>
+          :null}
+          
           <span style={style} className={weather.items.is_day? 'day_winter': 'night_winter'}>
+            <div className="cloud">
+              <img src={cloud1} alt="" className="cloud1"/>
+              <img src={cloud2} alt="" className="cloud2"/>
+              <img src={cloud3} alt="" className="cloud3"/>
+              <img src={cloud4} alt="" className="cloud4"/>
+            </div>
             <h1 className='weatherText'>{weather.items.condition.text}</h1>
             <img src={weather.items.condition.icon} alt="img" />
             {weather.items.temp_c}
