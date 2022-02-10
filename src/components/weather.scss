@@ -38,6 +38,33 @@
     top: 0;
 }
 
+.wraper{
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sun{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    object-fit:cover;
+    mix-blend-mode:screen;
+    background: rgba(255, 255, 255, 0.000001);
+}
+.moon{
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    object-fit:cover;
+}
+
 @keyframes rain{
     0%{
         background-position: 0% 0%;
@@ -74,7 +101,7 @@
 }
 @-webkit-keyframes animCloud {
     from {
-        -webkit-transform: translateX(100%)
+        -webkit-transform: translateX(50%)
     }
     to {
         -webkit-transform: translateX(-100%)
@@ -82,7 +109,7 @@
 }
 @-moz-keyframes animCloud {
     from {
-        -moz-transform: translateX(100%)
+        -moz-transform: translateX(50%)
     }
     to {
         -moz-transform: translateX(-100%)
