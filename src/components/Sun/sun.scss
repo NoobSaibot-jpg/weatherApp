@@ -1,0 +1,10 @@
+.sun{
+    background: url('./img/sun.gif') 100% center/cover;
+    position: absolute;
+    right: -10%;
+    top: -10%;
+    width: 20vw;
+    height: 20vw;
+    object-fit:cover;
+    mix-blend-mode:screen;
+}

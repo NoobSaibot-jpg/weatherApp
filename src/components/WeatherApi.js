@@ -1,14 +1,15 @@
 import Spiner from './spiner/Spiner';
 import './weather.scss';
 import { useState, useEffect } from 'react';
-import cloud1 from './img/cloud-01.png';
-import cloud2 from './img/cloud-02.png';
-import cloud3 from './img/cloud-03.png';
-import cloud4 from './img/cloud-04.png';
-import sun2 from './img/sun.gif'
+import Clouds from './Clouds/Clouds'
+import Rain from './Rain/Rain'
+import Fog from './Fog/Fog'
+import Sun from './Sun/Sun';
+import Snow from './Snow/Snow'
 
 export default function WeatherApi() {
 
+  
 
   const [weather, setWeather]= useState({});
   
@@ -35,6 +36,10 @@ export default function WeatherApi() {
 
   const myReCloud = /snow/;
   const myReRain = /rain/;
+  const myReFog = /fog/;
+  const myReMist = /mist/;
+  const myReClear = /clear/;
+  const myReSunny = /sunny/;
 
   const style = {
     height: '100%',
@@ -42,7 +47,6 @@ export default function WeatherApi() {
     display: 'block'
     
   }
-  
 
     if (weather.error) {
       return <div>Ошибка: {weather.error.message}</div>
@@ -51,36 +55,30 @@ export default function WeatherApi() {
     } else {
       return (
         <>
-          
           {myReCloud.exec(weather.items.condition.text) ?
-              <>
-                <div className="snow1"></div>
-                <div className="snow2"></div>
-                
-              </>
+              <Snow/>
           :null}
           {myReRain.exec(weather.items.condition.text) ?
-              <>
-                <div className="rain"></div>
-              </>
+              <Rain/>
           :null}
-          
-          
           <span style={style} className={weather.items.is_day? 'day_winter': 'night_winter'}>
-            {weather.items.is_day? <img src={sun2} alt="sun" className="sun" />: null}
-                <div className="cloud">
-                  <img src={cloud1} alt="" className="cloud1"/>
-                  <img src={cloud2} alt="" className="cloud2"/>
-                  <img src={cloud3} alt="" className="cloud3"/>
-                  <img src={cloud4} alt="" className="cloud4"/>
-                </div>
+            {weather.items.is_day? <Sun/>: null}
+                {myReClear.exec(weather.items.condition.text) ?
+              null
+          :<Clouds/>}
+          {myReSunny.exec(weather.items.condition.text) ?
+              null
+          :<Clouds/>}
             <div className="wraper">
               <h1 className='weatherText'>{weather.items.condition.text}</h1>
               <img src={weather.items.condition.icon} alt="img" />
               <h2 className="temp">{weather.items.temp_c}</h2>
             </div>
+            {myReFog.exec(weather.items.condition.text) ?
+              <Fog/>
+            :null}
+            {myReMist.exec(weather.items.condition.text) ?
+              <Fog/>
+            :null}
           </span>
-        </>
-        
-      )
-    }}
+        </>)}}
