@@ -38,8 +38,8 @@ export default function WeatherApi() {
   const myReRain = /rain/;
   const myReFog = /fog/;
   const myReMist = /mist/;
-  const myReClear = /clear/;
-  const myReSunny = /sunny/;
+  const myReClear = /Clear/;
+  const myReSunny = /Sunny/;
 
   const style = {
     height: '100%',
@@ -63,12 +63,10 @@ export default function WeatherApi() {
           :null}
           <span style={style} className={weather.items.is_day? 'day_winter': 'night_winter'}>
             {weather.items.is_day? <Sun/>: null}
-                {myReClear.exec(weather.items.condition.text) ?
+                {myReClear.exec(weather.items.condition.text)|| myReSunny.exec(weather.items.condition.text) ?
               null
           :<Clouds/>}
-          {myReSunny.exec(weather.items.condition.text) ?
-              null
-          :<Clouds/>}
+          
             <div className="wraper">
               <h1 className='weatherText'>{weather.items.condition.text}</h1>
               <img src={weather.items.condition.icon} alt="img" />
