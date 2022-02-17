@@ -6,6 +6,8 @@ import Rain from './Rain/Rain'
 import Fog from './Fog/Fog'
 import Sun from './Sun/Sun';
 import Snow from './Snow/Snow'
+import Title from './Title/Title'
+
 
 export default function WeatherApi() {
 
@@ -31,9 +33,11 @@ export default function WeatherApi() {
         });
       }
     )
-  },[weather])
-  
+    
+  },[])
 
+ 
+ 
   const myReCloud = /snow/;
   const myReRain = /rain/;
   const myReFog = /fog/;
@@ -54,7 +58,9 @@ export default function WeatherApi() {
       return <Spiner/>;
     } else {
       return (
+        
         <>
+        <Title temp = {weather.items.temp_c}/>
           {myReCloud.exec(weather.items.condition.text) ?
               <Snow/>
           :null}
