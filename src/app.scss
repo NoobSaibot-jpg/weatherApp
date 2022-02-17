@@ -1,7 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 
 
-
+html{
+    overflow: hidden;
+}
 #root{
     height: 100vh;
 }

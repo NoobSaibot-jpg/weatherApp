@@ -62,9 +62,9 @@ export default function WeatherApi() {
               <Rain/>
           :null}
           <span style={style} className={weather.items.is_day? 'day_winter': 'night_winter'}>
-            {/* {weather.items.is_day?  */}
+            {weather.items.is_day? 
             <Sun/>
-            {/* // : null} */}
+             : null} 
                 {myReClear.exec(weather.items.condition.text)|| myReSunny.exec(weather.items.condition.text) ?
               null
           :<Clouds/>}
