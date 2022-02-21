@@ -1,8 +1,10 @@
 import {useTitle} from 'react-use';
+import { memo } from 'react';
 
 
-const Title = (temp) => {
-  useTitle(temp.temp);
-return null;
-};
-export default Title
+export default memo(
+  function Title(temp) {
+    useTitle(temp.temp)
+  return null
+  }
+)

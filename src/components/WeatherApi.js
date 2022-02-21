@@ -1,12 +1,12 @@
 import Spiner from './spiner/Spiner';
 import './weather.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import Clouds from './Clouds/Clouds'
 import Rain from './Rain/Rain'
 import Fog from './Fog/Fog'
 import Sun from './Sun/Sun';
 import Snow from './Snow/Snow'
-import Title from './Title/Title'
+import Title from './titleAndIcons/Title'
 
 
 export default function WeatherApi() {
@@ -70,7 +70,7 @@ export default function WeatherApi() {
           <span style={style} className={weather.items.is_day? 'day_winter': 'night_winter'}>
             {weather.items.is_day? 
             <Sun/>
-             : null} 
+              : null}  
                 {myReClear.exec(weather.items.condition.text)|| myReSunny.exec(weather.items.condition.text) ?
               null
           :<Clouds/>}
@@ -80,10 +80,7 @@ export default function WeatherApi() {
               <img src={weather.items.condition.icon} alt="img" />
               <h2 className="temp">{weather.items.temp_c}</h2>
             </div>
-            {myReFog.exec(weather.items.condition.text) ?
-              <Fog/>
-            :null}
-            {myReMist.exec(weather.items.condition.text) ?
+            {myReFog.exec(weather.items.condition.text) || myReMist.exec(weather.items.condition.text) ?
               <Fog/>
             :null}
           </span>

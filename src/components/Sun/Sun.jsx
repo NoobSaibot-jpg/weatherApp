@@ -1,8 +1,9 @@
 import React from 'react'
 import './sun.scss'
+import sun from './img/sunLens.jpeg'
 
 export default function Sun() {
   return (
-    <div className="sun" />
+    <img src = {sun} className="sun" alt = 'sun'/>
   )
 }

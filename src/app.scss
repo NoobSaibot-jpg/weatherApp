@@ -3,12 +3,16 @@
 
 html{
     overflow: hidden;
+    overflow-x: hidden;
 }
 #root{
     height: 100vh;
+    overflow: hidden;
 }
 .App{
     height: 100vh;
+    overflow: hidden;
+
 }
 
 ::-webkit-scrollbar {
