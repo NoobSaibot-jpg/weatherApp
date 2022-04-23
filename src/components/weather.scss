@@ -7,13 +7,24 @@
     font-weight: 300;
 }
 
-.night_winter{
+.night_kharkiv{
     background: url('http://mykharkov.info/wp-content/uploads/2012/09/gosprom.jpg') center/cover no-repeat;
     text-align: center;
     overflow: hidden;
 }
-.day_winter{
+.day_kharkiv{
     background: url('./img/day.jpg') center/cover no-repeat;
+    text-align: center;
+    overflow: hidden;
+}
+
+.night_prievidza{
+    background: url('./img/prievidza-nigt.jpg') center/cover no-repeat;
+    text-align: center;
+    overflow: hidden;
+}
+.day_prievidza{
+    background: url('./img/prievidza-day.jpg') center/cover no-repeat;
     text-align: center;
     overflow: hidden;
 }
