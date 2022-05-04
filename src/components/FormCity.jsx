@@ -2,7 +2,6 @@
 import cities from './cities.json';
 import { useEffect, useState, useContext } from 'react';
 import * as React from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
 import { Button } from '@mui/material';
 import { SwipeableDrawer, Autocomplete, TextField } from '@mui/material';
 import { CitiesContext } from './Context';
