@@ -5,7 +5,7 @@ import {useState} from 'react'
 
 
 function App() {
-  const [context, setContext] = useState("Kharkiv");
+  const [context, setContext] = useState(localStorage.getItem('city')?localStorage.getItem('city'):'Kharkiv');
   
   return (
     <div className="App">

@@ -42,6 +42,7 @@ export default function FormCity() {
     value={context}
     onChange={(event, newValue) => {
       setContext(newValue);
+      localStorage.setItem('city', newValue)
     }}
   />
   );

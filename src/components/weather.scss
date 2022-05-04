@@ -13,7 +13,7 @@
     overflow: hidden;
 }
 .day_kharkiv{
-    background: url('./img/day.jpg') center/cover no-repeat;
+    background: url('./img/kharkiv-day.jpg') center/cover no-repeat;
     text-align: center;
     overflow: hidden;
 }
@@ -25,6 +25,16 @@
 }
 .day_prievidza{
     background: url('./img/prievidza-day.jpg') center/cover no-repeat;
+    text-align: center;
+    overflow: hidden;
+}
+.day_all{
+    background: url('./img/day.jpg') center/cover no-repeat;
+    text-align: center;
+    overflow: hidden;
+}
+.night_all{
+    background: url('./img/night.jpg') center/cover no-repeat;
     text-align: center;
     overflow: hidden;
 }

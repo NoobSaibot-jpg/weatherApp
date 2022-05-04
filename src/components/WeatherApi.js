@@ -58,6 +58,10 @@ export default function WeatherApi() {
       return 'day_prievidza'
     }else if(!weather.items.is_day && context ==='Prievidza'){
       return 'night_prievidza'
+    }else if(weather.items.is_day){
+      return 'day_all'
+    }else if(!weather.items.is_day){
+      return 'night_all'
     }
   }
 
