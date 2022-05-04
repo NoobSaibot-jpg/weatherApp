@@ -16,7 +16,7 @@ import { CitiesContext } from './Context';
 
 export default function WeatherApi() {
 
-  const [context, setContext] = useContext(CitiesContext);
+  const [context] = useContext(CitiesContext);
   const [weather, setWeather]= useState({});
   
 
