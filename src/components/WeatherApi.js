@@ -83,7 +83,7 @@ export default function WeatherApi() {
         <div style={{zIndex:'10000', position:'absolute'}}>
           <FormCity />
         </div>
-        <Title temp = {weather.items.temp_c}/>
+        <Title temp = {weather.items.temp_c }/>
           {myReCloud.exec(weather.items.condition.text) ?
               <Snow/>
           :null}
@@ -101,7 +101,7 @@ export default function WeatherApi() {
             <div className="wraper">
               <h1 className='weatherText'>{weather.items.condition.text}</h1>
               <img src={weather.items.condition.icon} alt="img" />
-              <h2 className="temp">{weather.items.temp_c}</h2>
+              <h2 className="temp">{`${weather.items.temp_c}  ${context}`}</h2>
             </div>
             {myReFog.exec(weather.items.condition.text) || myReMist.exec(weather.items.condition.text) ?
               <Fog/>
