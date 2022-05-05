@@ -49,7 +49,7 @@ export default function FormCity() {
 
   return (
       <div>
-        {['left'].map((anchor) => (
+        {['Слава Україні'].map((anchor) => (
           <React.Fragment key={anchor}>
             <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
             <SwipeableDrawer
