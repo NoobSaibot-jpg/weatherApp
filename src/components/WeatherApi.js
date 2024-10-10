@@ -21,7 +21,7 @@ export default function WeatherApi() {
   
 
   useEffect(()=>{
-    fetch(`https://api.weatherapi.com/v1/current.json?key=b23e4af68e1f4e088d4132115222201&q=${context}`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=7e6da125d4da437285455210241010&q=${context}`)
     .then(res => res.json())
     .then(
       (result) => {
